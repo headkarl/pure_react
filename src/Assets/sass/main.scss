@@ -1,0 +1,91 @@
+// parameter
+$color-blue: RGBA(49, 152, 255, 1.00);
+$color-cyan: RGBA(0, 203, 194, 1.00);
+$color-green: RGBA(53, 193, 68, 1.00);
+$color-dark: RGBA(83, 92, 100, 1.00);
+$color-brown: RGBA(149, 85, 0, 1.00);
+$color-gray: RGBA(239, 240, 244, 1.00);
+$color-border: RGBA(175, 175, 175, 0.9);
+$navbar-height: 64px;
+
+// inherit
+%common {
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 12px;
+  transition: all .1s ease;
+}
+%center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+// animation
+
+// element
+html {
+  height: 100%;
+}
+body {
+  @extend %common;
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+#app {
+  @extend %common;
+  font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  .layout {
+    @extend %common;
+    height: 100%;
+  }
+  .sidebar {
+    @extend %common;
+    height: 100%;
+    overflow-y: auto;
+    color: #fff;
+    a {
+      color: #fff !important;
+    }
+  }
+  .logo {
+    @extend %common;
+    @extend %center;
+    height: $navbar-height;
+    i {
+      color: #fff;
+      font-size: 28px;
+    }
+    span {
+      padding-left: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .navbar {
+    @extend %common;
+    padding: 0 24px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    line-height: $navbar-height;
+  }
+  .module {
+    @extend %common;
+    position: relative;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+// antd reconstructor
+.ant-menu-dark {
+  a {
+    color: #fff !important;
+  }
+}
