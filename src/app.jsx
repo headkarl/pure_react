@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 
 import 'antd-mobile/dist/antd-mobile.css'
@@ -12,9 +11,7 @@ import routes from '@/Router/index'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      {routes}
-    </Router>
+    {routes}
   </Provider>,
   document.getElementById('app')
 )

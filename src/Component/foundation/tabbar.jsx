@@ -80,6 +80,7 @@ class Tabbar extends React.Component {
             this.setState({
               selectedTab: 'Account'
             })
+            browserHistory.push('/account')
           }}
           data-seed="logId"
         >

@@ -1,24 +1,24 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Router, browserHistory, Route, IndexRoute } from 'react-router'
 
 import Bone from '@/Component/foundation/bone'
 import Login from '@/Component/foundation/login'
 
 import Course from '@/Component/course/main'
+import Account from '@/Component/account/main'
 
-// import { About, Inbox, Message, Dashboard } from '@/Component/test/index'
-// import ReduxDemo from '@/Component/test/redux'
+browserHistory.listen((to) => {
+  console.log(to)
+})
 
 const routes = (
-  <Route path="/" component={Bone}>
-    <IndexRoute component={Course} />
-    <Route path="login" component={Login} />
-    {/* <Route path="about" component={About} />
-    <Route path="inbox" component={Inbox}>
-      <Route path="messages/:id" component={Message} />
+  <Router history={browserHistory}>
+    <Route path="/" component={Bone}>
+      <IndexRoute component={Course} />
+      <Route path="login" component={Login} />
+      <Route path="account" component={Account} />
     </Route>
-    <Route path="redux" component={ReduxDemo} /> */}
-  </Route>
+  </Router>
 )
 
 export default routes
