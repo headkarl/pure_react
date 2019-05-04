@@ -70,11 +70,26 @@ const generateConfig = env => ({
       },
       {
         test: /\.css$/,
+        // include: /node_modules|antd\.css/,
         use: [
           miniCssExtractPlugin.loader,
           // { loader: 'style-loader' },
           { loader: 'css-loader' },
           { loader: 'postcss-loader', options: postcssOpts }
+        ]
+      },
+      {
+        test: /\.(eot|woff2?|ttf|svg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "[name]-[hash:5].min.[ext]",
+              limit: 5000, // fonts file size <= 5KB, use 'base64'; else, output svg file
+              publicPath: "fonts/",
+              outputPath: "fonts/"
+            }
+          }
         ]
       }
     ]

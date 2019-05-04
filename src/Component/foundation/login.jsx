@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { List, InputItem, WhiteSpace } from 'antd-mobile'
+import { List, InputItem, WhiteSpace, Button } from 'antd-mobile'
 import { demoAction } from '@/Action/index'
 
 class Template extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      prop: 1
     }
   }
 
@@ -18,22 +17,20 @@ class Template extends React.Component {
   componentWillUnmount () {}
 
   method = () => {
-    this.setState({ prop: 2 })
   }
-
   render () {
     return (
       <div>
-        <div>
-          Origin React Component
-          <button onClick = {this.method}>Method Action</button>
-          {this.state.prop}
-        </div>
-        <div>
-          Redux React Component
-          <button onClick = {this.props.onClick}>Redux Action</button>
-          <div>{this.props.prop}</div>
-        </div>
+        <List>
+          <InputItem clear placeholder="Username">用户</InputItem>
+          <InputItem clear placeholder="Password">密码</InputItem>
+        </List>
+        <WhiteSpace></WhiteSpace>
+        <Button type="primary" loading={false}>
+          <i className="iconfont icon-login"></i>
+          &nbsp;
+          Sign In
+        </Button>
       </div>
     )
   }

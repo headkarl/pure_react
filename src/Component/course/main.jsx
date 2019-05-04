@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { List, InputItem, WhiteSpace } from 'antd-mobile'
 import { demoAction } from '@/Action/index'
 
-class Template extends React.Component {
+class Course extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -24,16 +23,7 @@ class Template extends React.Component {
   render () {
     return (
       <div>
-        <div>
-          Origin React Component
-          <button onClick = {this.method}>Method Action</button>
-          {this.state.prop}
-        </div>
-        <div>
-          Redux React Component
-          <button onClick = {this.props.onClick}>Redux Action</button>
-          <div>{this.props.prop}</div>
-        </div>
+        this is Course
       </div>
     )
   }
@@ -48,4 +38,4 @@ export default connect(
       dispatch(demoAction({ prop: 'kiiil' }))
     }
   })
-)(Template)
+)(Course)
