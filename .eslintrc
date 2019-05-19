@@ -14,6 +14,9 @@
     'no-unused-vars': 0
   },
   "parser": "babel-eslint",
-  "parserOptions": {
-  }
+  "parserOptions": {},
+  "env": {
+    "browser": true
+  },
+  "globals": {}
 }
